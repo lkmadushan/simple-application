@@ -1,47 +1,53 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container pt-4">
         <div class="row justify-content-center">
+            <div class="col-md-4"></div>
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">{{ __('Countries') }}</div>
-
                     <div class="card-body">
-                      <button>
-                        <a href="{{ route('countries.create') }}">Create New Country</a>
-                      </button>
-
                         @if (session('status'))
                             <div class="alert alert-success" role="alert">
                                 {{ session('status') }}
                             </div>
                         @endif
 
-                        <form action="{{ route('countries.index') }}" method="GET">
-                            <input type="text" value="{{ request('search') }}" class="form-control" name="search">
+                        <form class="d-flex" action="{{ route('countries.index') }}" method="GET">
+                            <input placeholder="Search here..." type="text" value="{{ request('search') }}" class="form-control" name="search">
 
-                            <button>Search</button>
+                            <button class="mx-2 btn btn-primary text-light">
+                              <i class="fa fa-search"></i>
+                            </button>
+                            <a class="btn btn-primary" href="{{ route('countries.create') }}">Create</a>
                         </form>
 
-                        <table>
-                            <thead>
+                        <table class="table mt-3">
+                            <thead style="background-color:#F0F0F0;">
                             <th>Country Code</th>
                             <th>Name</th>
+                            <th></th>
+                            <th>Actions</th>
                             </thead>
                             <tbody>
                             @foreach($countries as $country)
                                 <tr>
-                                    <td>{{ $country->country_code }}</td>
-                                    <td>{{ $country->name }}</td>
-                                    <td><a href="{{ route('countries.show', $country->id) }}">Edit</a></td>
+                                    <td class="align-middle font-weight-bold">{{ $country->country_code }}</td>
+                                    <td class="align-middle font-weight-bold">{{ $country->name }}</td>
+                                    <td></td>
                                     <td>
+                                       <div class="d-flex">
+                                        <a class="mt-2 mr-2" href="{{ route('countries.show', $country->id) }}">
+                                          <i class="fas fa-edit"></i>
+                                        </a>
                                         <form action="{{ route('countries.destroy', $country->id) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
 
-                                            <button class="btn btn-link">Delete</button>
+                                            <button class="btn btn-link"><i class="fas fa-trash-alt"></i></button>
                                         </form>
+                                       </div>
                                     </td>
                                 </tr>
                             @endforeach
