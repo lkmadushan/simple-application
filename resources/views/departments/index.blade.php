@@ -1,35 +1,30 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container pt-4">
+    <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-4"></div>
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">{{ __('Departments') }}</div>
-
                     <div class="card-body">
                         @if (session('status'))
                             <div class="alert alert-success" role="alert">
                                 {{ session('status') }}
                             </div>
                         @endif
-
                         <form class="d-flex" action="{{ route('departments.index') }}" method="GET">
                             <input placeholder="Search here..." type="text" value="{{ request('search') }}" class="form-control" name="search">
                             <button class="mx-2 btn btn-primary text-light">
                               <i class="fa fa-search"></i>
                             </button>
                             <a class="btn btn-primary" href="{{ route('departments.create') }}">Create</a>
-
                         </form>
-
                         <table class="table mt-3">
                             <thead style="background-color:#F0F0F0;">
                             <tr>
                                <th scope="col">Name</th>
                                <th scope="col"></th>
-                               <th scope="col">Actions</th>
+                               <th class="d-flex justify-content-end mr-2" scope="col">Actions</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -37,7 +32,7 @@
                                 <tr>
                                     <td class="align-middle font-weight-bold">{{ $department->name }}</td>
                                     <td></td>
-                                    <td>
+                                    <td class="d-flex justify-content-end">
                                    <div class="d-flex">
                                      <a class="mt-2 mr-2" href="{{ route('departments.show', $department->id) }}">
                                         <i class="fas fa-edit"></i>

@@ -1,9 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container pt-4">
+    <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-4"></div>
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">{{ __('Countries') }}</div>
@@ -28,7 +27,7 @@
                             <th>Country Code</th>
                             <th>Name</th>
                             <th></th>
-                            <th>Actions</th>
+                            <th class="d-flex justify-content-end mr-2">Actions</th>
                             </thead>
                             <tbody>
                             @foreach($countries as $country)
@@ -36,7 +35,7 @@
                                     <td class="align-middle font-weight-bold">{{ $country->country_code }}</td>
                                     <td class="align-middle font-weight-bold">{{ $country->name }}</td>
                                     <td></td>
-                                    <td>
+                                    <td class="d-flex justify-content-end">
                                        <div class="d-flex">
                                         <a class="mt-2 mr-2" href="{{ route('countries.show', $country->id) }}">
                                           <i class="fas fa-edit"></i>
