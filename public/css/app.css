@@ -69,17 +69,6 @@ body {
   outline: 0 !important;
 }
 
-/*custom-css-start*/
-.sidebar-menu-button {
-    font-size:15px;
-    cursor: pointer;
-}
-
-.active-sidebar-menu{
-    background-color:#E0E9F2;
-}
-/*custom-css-end*/
-
 hr {
   box-sizing: content-box;
   height: 0;
