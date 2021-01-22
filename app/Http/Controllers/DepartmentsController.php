@@ -36,6 +36,16 @@ class DepartmentsController extends Controller
     }
 
     /**
+     * Show department create form.
+     *
+     * @return View
+     */
+    public function create()
+    {
+        return view('departments.create');
+    }
+
+    /**
      * Create a department.
      *
      * @return RedirectResponse
