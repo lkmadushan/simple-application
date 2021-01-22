@@ -114,6 +114,6 @@ class DepartmentsTest extends TestCase
         $response = $this->delete('departments/'.$department->id);
 
         $response->assertViewIs('departments.index');
-        $response->assertDontSee('New Name');
+        $response->assertDontSee($department->name);
     }
 }
