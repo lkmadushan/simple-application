@@ -3,6 +3,7 @@
 use App\Http\Controllers\CountriesController;
 use App\Http\Controllers\DepartmentsController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\StatesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,4 +39,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('countries/{country}', [CountriesController::class, 'show'])->name('countries.show');
     Route::put('countries/{country}', [CountriesController::class, 'update'])->name('countries.update');
     Route::delete('countries/{country}', [CountriesController::class, 'destroy'])->name('countries.destroy');
+
+    Route::get('states', [StatesController::class, 'index'])->name('states.index');
+    Route::post('states', [StatesController::class, 'store'])->name('states.store');
+    Route::get('states/create', [StatesController::class, 'create'])->name('states.create');
+    Route::get('states/{state}', [StatesController::class, 'show'])->name('states.show');
+    Route::put('states/{state}', [StatesController::class, 'update'])->name('states.update');
+    Route::delete('states/{state}', [StatesController::class, 'destroy'])->name('states.destroy');
 });
