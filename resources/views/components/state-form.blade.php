@@ -12,12 +12,11 @@
   <form action="{{ $action }}" method="POST">
     @csrf
     @method($method)
-
     <div class="form-group">
       <label for="country_id">Country</label>
-      <select id="country_id" name="country_id">
+      <select class="form-control" id="country_id" name="country_id">
         @foreach($countries as $country)
-          <option
+          <option class=""
             value="{{ $country->id }}"
             @if(optional($state)->country_id == $country->id) selected @endif
           >{{ $country->name }}</option>
