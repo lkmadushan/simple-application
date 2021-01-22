@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CountriesController;
 use App\Http\Controllers\DepartmentsController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -30,4 +31,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('departments/{department}', [DepartmentsController::class, 'show'])->name('departments.show');
     Route::put('departments/{department}', [DepartmentsController::class, 'update'])->name('departments.update');
     Route::delete('departments/{department}', [DepartmentsController::class, 'destroy'])->name('departments.destroy');
+
+    Route::get('countries', [CountriesController::class, 'index'])->name('countries.index');
+    Route::post('countries', [CountriesController::class, 'store'])->name('countries.store');
+    Route::get('countries/create', [CountriesController::class, 'create'])->name('countries.create');
+    Route::get('countries/{country}', [CountriesController::class, 'show'])->name('countries.show');
+    Route::put('countries/{country}', [CountriesController::class, 'update'])->name('countries.update');
+    Route::delete('countries/{country}', [CountriesController::class, 'destroy'])->name('countries.destroy');
 });
