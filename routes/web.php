@@ -25,8 +25,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 
     Route::get('departments', [DepartmentsController::class, 'index'])->name('departments.index');
+    Route::post('departments', [DepartmentsController::class, 'store'])->name('departments.store');
+    Route::get('departments/create', [DepartmentsController::class, 'create'])->name('departments.create');
     Route::get('departments/{department}', [DepartmentsController::class, 'show'])->name('departments.show');
-    Route::post('departments', [DepartmentsController::class, 'store']);
-    Route::put('departments/{department}', [DepartmentsController::class, 'update']);
-    Route::delete('departments/{department}', [DepartmentsController::class, 'destroy']);
+    Route::put('departments/{department}', [DepartmentsController::class, 'update'])->name('departments.update');
+    Route::delete('departments/{department}', [DepartmentsController::class, 'destroy'])->name('departments.destroy');
 });

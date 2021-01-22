@@ -49,6 +49,17 @@ class DepartmentsTest extends TestCase
     }
 
     /** @test */
+    public function can_get_department_create_form()
+    {
+        $user = User::factory()->create();
+
+        $this->actingAs($user);
+        $response = $this->get('departments/create');
+
+        $response->assertViewIs('departments.create');
+    }
+
+    /** @test */
     public function cannot_create_departments_without_valid_name()
     {
         $user = User::factory()->create();
