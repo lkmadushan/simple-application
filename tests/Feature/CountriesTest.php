@@ -74,7 +74,6 @@ class CountriesTest extends TestCase
     /** @test */
     public function can_create_countries()
     {
-        $this->withoutExceptionHandling();
         $user = User::factory()->create();
         $country = Country::factory()->make();
 
