@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container pt-4">
         <div class="row justify-content-center">
+            <div class="col-md-4"></div>
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">{{ __('Departments') }}</div>
@@ -18,28 +19,42 @@
                             </div>
                         @endif
 
-                        <form action="{{ route('departments.index') }}" method="GET">
-                            <input type="text" value="{{ request('search') }}" class="form-control" name="search">
+                        <form class="d-flex" action="{{ route('departments.index') }}" method="GET">
+                            <input placeholder="Search here..." type="text" value="{{ request('search') }}" class="form-control" name="search">
+                            <button class="mx-2 btn btn-primary text-light">
+                              <i class="fa fa-search"></i>
+                            </button>
+                            <button class="btn btn-primary">Create</button>
 
-                            <button>Search</button>
                         </form>
 
-                        <table>
-                            <thead>
-                            <th>Name</th>
+                        <table class="table mt-3">
+                            <thead style="background-color:#F0F0F0;">
+                            <tr>
+                               <th scope="col">Name</th>
+                               <th scope="col"></th>
+                               <th scope="col">Actions</th>
+                            </tr>
                             </thead>
                             <tbody>
                             @foreach($departments as $department)
                                 <tr>
-                                    <td>{{ $department->name }}</td>
-                                    <td><a href="{{ route('departments.show', $department->id) }}">Edit</a></td>
+                                    <td class="align-middle font-weight-bold">{{ $department->name }}</td>
+                                    <td></td>
                                     <td>
-                                        <form action="{{ route('departments.show', $department->id) }}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
+                                   <div class="d-flex">
+                                     <a class="mt-2 mr-2" href="{{ route('departments.show', $department->id) }}">
+                                        <i class="fas fa-edit"></i>
+                                     </a>
+                                     <form action="{{ route('departments.show', $department->id) }}" method="POST">
+                                         @csrf
+                                         @method('DELETE')
 
-                                            <button class="btn btn-link">Delete</button>
-                                        </form>
+                                         <button class="btn btn-link">
+                                           <i class="fas fa-trash-alt"></i>
+                                         </button>
+                                     </form>
+                                   </div>
                                     </td>
                                 </tr>
                             @endforeach
