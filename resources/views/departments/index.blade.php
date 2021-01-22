@@ -8,6 +8,10 @@
                     <div class="card-header">{{ __('Departments') }}</div>
 
                     <div class="card-body">
+                      <button>
+                        <a href="{{ route('departments.create') }}">Create New Department</a>
+                      </button>
+
                         @if (session('status'))
                             <div class="alert alert-success" role="alert">
                                 {{ session('status') }}
