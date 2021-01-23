@@ -1,18 +1,14 @@
 <?php
 
-namespace App\Country;
+namespace App\Domain\Country;
 
+use App\Domain\BaseModel;
 use Database\Factories\CountryFactory;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Query\Builder;
 
-class Country extends Model
+class Country extends BaseModel
 {
-    use HasFactory, SoftDeletes;
-
     /**
      * The attributes that are mass assignable.
      *

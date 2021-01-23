@@ -2,7 +2,7 @@
 
 namespace App\View\Components;
 
-use App\Country\Country;
+use App\Domain\Country\Country;
 
 class CountryForm extends BaseComponent
 {

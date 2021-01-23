@@ -1,9 +1,9 @@
 <?php
 
-namespace App\City;
+namespace App\Domain\City;
 
-use App\Country\Country;
-use App\State\State;
+use App\Domain\Country\Country;
+use App\Domain\State\State;
 use Illuminate\Database\Eloquent\Builder;
 
 class CityBuilder extends Builder

@@ -2,8 +2,8 @@
 
 namespace Database\Factories;
 
-use App\City\City;
-use App\State\State;
+use App\Domain\City\City;
+use App\Domain\State\State;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class CityFactory extends Factory

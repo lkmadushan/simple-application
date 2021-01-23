@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Department;
+namespace App\Domain\Department;
 
 use Illuminate\Database\Eloquent\Builder;
 

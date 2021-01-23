@@ -1,18 +1,14 @@
 <?php
 
-namespace App\Department;
+namespace App\Domain\Department;
 
+use App\Domain\BaseModel;
 use Database\Factories\DepartmentFactory;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Query\Builder;
 
-class Department extends Model
+class Department extends BaseModel
 {
-    use HasFactory, SoftDeletes;
-
     /**
      * The attributes that are mass assignable.
      *

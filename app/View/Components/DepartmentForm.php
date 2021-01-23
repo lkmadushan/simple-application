@@ -2,7 +2,7 @@
 
 namespace App\View\Components;
 
-use App\Department\Department;
+use App\Domain\Department\Department;
 
 class DepartmentForm extends BaseComponent
 {

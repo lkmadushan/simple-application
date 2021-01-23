@@ -13,6 +13,10 @@ abstract class BaseComponent extends Component
      */
     public $resource;
 
+    /**
+     * BaseComponent constructor.
+     * @param Model $country
+     */
     public function __construct(Model $country)
     {
         $this->resource = $country;

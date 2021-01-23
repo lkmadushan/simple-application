@@ -3,6 +3,7 @@
 use App\Http\Controllers\CitiesController;
 use App\Http\Controllers\CountriesController;
 use App\Http\Controllers\DepartmentsController;
+use App\Http\Controllers\EmployeesController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StatesController;
 use Illuminate\Support\Facades\Route;
@@ -54,4 +55,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('cities/{city}', [CitiesController::class, 'show'])->name('cities.show');
     Route::put('cities/{city}', [CitiesController::class, 'update'])->name('cities.update');
     Route::delete('cities/{city}', [CitiesController::class, 'destroy'])->name('cities.destroy');
+
+    Route::get('employees', [EmployeesController::class, 'index'])->name('employees.index');
+    Route::post('employees', [EmployeesController::class, 'store'])->name('employees.store');
+    Route::get('employees/create', [EmployeesController::class, 'create'])->name('employees.create');
+    Route::get('employees/{employee}', [EmployeesController::class, 'show'])->name('employees.show');
+    Route::put('employees/{employee}', [EmployeesController::class, 'update'])->name('employees.update');
+    Route::delete('employees/{employee}', [EmployeesController::class, 'destroy'])->name('employees.destroy');
 });
