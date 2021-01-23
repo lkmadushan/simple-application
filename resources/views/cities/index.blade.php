@@ -23,8 +23,8 @@
                             <thead>
                             <th class="pl-4">Country</th>
                             <th>State</th>
-                            <th>Name</th>
                             <th></th>
+                            <th>Name</th>
                             <th class="text-right pr-4">Actions</th>
                             </thead>
                             <tbody>
@@ -32,8 +32,8 @@
                                 <tr>
                                     <td class="align-middle font-weight-bold pl-4">{{ $city->state->country->name }}</td>
                                     <td class="align-middle font-weight-bold">{{ $city->state->name }}</td>
-                                    <td class="align-middle font-weight-bold">{{ $city->name }}</td>
                                     <td></td>
+                                    <td class="align-middle font-weight-bold">{{ $city->name }}</td>
                                     <td>
                                       <div class="d-flex justify-content-end">
                                         <a class="mt-2 mr-2" href="{{ route('cities.show', $city->id) }}">
