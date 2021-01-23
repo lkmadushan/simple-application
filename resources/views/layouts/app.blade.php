@@ -77,7 +77,61 @@
         </nav>
 
         <main class="py-4">
-            @yield('content')
+          <div class="container">
+            <div class="row">
+              @auth
+                <div class="col-md-3">
+                  <ul class="nav flex-column mb-4">
+                    <li class="nav-item">
+                      <a class="nav-link pl-0 active" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link pl-0" href="#">Employee Management</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link pl-0" href="#">System Management</a>
+                      <ul class="nav flex-column">
+                        <li class="nav-item">
+                          <a class="nav-link small text-muted pt-0 pb-2" href="#">- Country</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link small text-muted pt-0 pb-2" href="#">- State</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link small text-muted pt-0 pb-2" href="#">- City</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link small text-muted pt-0 pb-2" href="#">- Department</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link pl-0" href="#">User Management</a>
+                      <ul class="nav flex-column">
+                        <li class="nav-item">
+                          <a class="nav-link small text-muted pt-0 pb-2" href="#">- User</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link small text-muted pt-0 pb-2" href="#">- Role</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link small text-muted pt-0 pb-2" href="#">- Permission</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="col-md-9">
+              @endauth
+
+              @guest
+                <div class="col-md-12">
+              @endguest
+                @yield('content')
+              </div>
+            </div>
+          </div>
         </main>
     </div>
 </body>
