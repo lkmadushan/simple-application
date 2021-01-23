@@ -20,20 +20,20 @@
                             <a class="btn btn-primary" href="{{ route('departments.create') }}">Create</a>
                         </form>
                         <table class="table mt-3">
-                            <thead style="background-color:#F0F0F0;">
+                            <thead>
                             <tr>
-                               <th scope="col">Name</th>
+                               <th scope="col" class="pl-4">Name</th>
                                <th scope="col"></th>
-                               <th class="d-flex justify-content-end mr-2" scope="col">Actions</th>
+                               <th class="text-right pr-4" scope="col">Actions</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($departments as $department)
                                 <tr>
-                                    <td class="align-middle font-weight-bold">{{ $department->name }}</td>
+                                    <td class="align-middle font-weight-bold pl-4">{{ $department->name }}</td>
                                     <td></td>
-                                    <td class="d-flex justify-content-end">
-                                   <div class="d-flex">
+                                    <td>
+                                   <div class="d-flex justify-content-end">
                                      <a class="mt-2 mr-2" href="{{ route('departments.show', $department->id) }}">
                                         <i class="fas fa-edit"></i>
                                      </a>
@@ -42,7 +42,7 @@
                                          @method('DELETE')
 
                                          <button class="btn btn-link">
-                                           <i class="fas fa-trash-alt"></i>
+                                           <i class="fas fa-trash-alt text-danger"></i>
                                          </button>
                                      </form>
                                    </div>
