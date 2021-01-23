@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\ChangeUserPasswordController;
 use App\Http\Controllers\CitiesController;
 use App\Http\Controllers\CountriesController;
 use App\Http\Controllers\DepartmentsController;
 use App\Http\Controllers\EmployeesController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StatesController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,6 +29,8 @@ Auth::routes();
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+    Route::put('users/{user}/change-password', ChangeUserPasswordController::class)->name('change_password');
 
     Route::get('departments', [DepartmentsController::class, 'index'])->name('departments.index');
     Route::post('departments', [DepartmentsController::class, 'store'])->name('departments.store');
@@ -62,4 +66,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('employees/{employee}', [EmployeesController::class, 'show'])->name('employees.show');
     Route::put('employees/{employee}', [EmployeesController::class, 'update'])->name('employees.update');
     Route::delete('employees/{employee}', [EmployeesController::class, 'destroy'])->name('employees.destroy');
+
+    Route::get('users', [UsersController::class, 'index'])->name('users.index');
+    Route::post('users', [UsersController::class, 'store'])->name('users.store');
+    Route::get('users/create', [UsersController::class, 'create'])->name('users.create');
+    Route::get('users/{user}', [UsersController::class, 'show'])->name('users.show');
+    Route::put('users/{user}', [UsersController::class, 'update'])->name('users.update');
+    Route::delete('users/{user}', [UsersController::class, 'destroy'])->name('users.destroy');
 });

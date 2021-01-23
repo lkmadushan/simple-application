@@ -31,7 +31,7 @@
         <div class="card-header">New Employee</div>
         <div class="card-body">
           <validation-observer ref="wellForm" v-slot="{ invalid }" tag="div">
-            <div>
+            <div style="height: 600px; overflow-y: auto" >
               <validation-provider rules="required|alpha|max:6" v-slot="{ errors }">
                 <div class="form-group">
                   <label for="first_name">First Name</label>
@@ -245,6 +245,7 @@ export default {
   },
 
   created() {
+    console.log('called')
     this.fetchEmployees()
     this.fetchCountries()
     this.fetchDepartment()
@@ -296,12 +297,6 @@ export default {
     },
 
     async fetchStates() {
-      if (!this.countries.length || !this.selectedEmployee || !this.selectedEmployee.country_id) {
-        this.states = []
-
-        return
-      }
-
       const {data} = await this.$http.get('states', {
         params: {
           country_id: this.selectedEmployee.country_id,
@@ -312,12 +307,6 @@ export default {
     },
 
     async fetchCities() {
-      if (!this.states.length || !this.selectedEmployee || !this.selectedEmployee.state_id) {
-        this.cities = []
-
-        return
-      }
-
       const {data} = await this.$http.get('cities', {
         params: {
           state_id: this.selectedEmployee.state_id,

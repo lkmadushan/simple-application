@@ -2,9 +2,11 @@
 
 namespace App\Domain\User;
 
+use App\Domain\Role\Role;
 use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
@@ -19,7 +21,10 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name',
+        'username',
+        'first_name',
+        'last_name',
+        'role_id',
         'email',
         'password',
     ];
@@ -42,6 +47,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Role of the user.
+     *
+     * @return BelongsTo
+     */
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
 
     /**
      * Create a new factory instance for the model.
