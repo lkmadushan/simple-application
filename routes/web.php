@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CitiesController;
 use App\Http\Controllers\CountriesController;
 use App\Http\Controllers\DepartmentsController;
 use App\Http\Controllers\HomeController;
@@ -46,4 +47,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('states/{state}', [StatesController::class, 'show'])->name('states.show');
     Route::put('states/{state}', [StatesController::class, 'update'])->name('states.update');
     Route::delete('states/{state}', [StatesController::class, 'destroy'])->name('states.destroy');
+
+    Route::get('cities', [CitiesController::class, 'index'])->name('cities.index');
+    Route::post('cities', [CitiesController::class, 'store'])->name('cities.store');
+    Route::get('cities/create', [CitiesController::class, 'create'])->name('cities.create');
+    Route::get('cities/{city}', [CitiesController::class, 'show'])->name('cities.show');
+    Route::put('cities/{city}', [CitiesController::class, 'update'])->name('cities.update');
+    Route::delete('cities/{city}', [CitiesController::class, 'destroy'])->name('cities.destroy');
 });

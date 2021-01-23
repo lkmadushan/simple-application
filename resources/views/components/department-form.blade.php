@@ -15,7 +15,7 @@
         id="name"
         type="text"
         class="form-control @error('name') is-invalid  @enderror"
-        value="{{ old('name', $department->name) }}"
+        value="{{ old('name', $resource->name) }}"
         name="name"
       >
     </div>

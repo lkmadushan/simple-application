@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Department;
+use App\Department\Department;
 use Exception;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
@@ -18,7 +18,7 @@ class DepartmentsController extends Controller
     {
         return view('departments.index', [
             'departments' => Department::query()
-                ->where('name', 'like', request('search').'%')
+                ->search(request('search'))
                 ->get(),
         ]);
     }

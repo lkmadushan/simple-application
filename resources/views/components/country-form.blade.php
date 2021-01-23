@@ -19,7 +19,7 @@
         id="country_code"
         type="text"
         class="form-control @error('country_code') is-invalid  @enderror"
-        value="{{ old('country_code', $country->country_code) }}"
+        value="{{ old('country_code', $resource->country_code) }}"
         name="country_code"
       >
     </div>
@@ -30,7 +30,7 @@
         id="name"
         type="text"
         class="form-control @error('name') is-invalid  @enderror"
-        value="{{ old('name', $country->name) }}"
+        value="{{ old('name', $resource->name) }}"
         name="name"
       >
     </div>
