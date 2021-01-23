@@ -2,9 +2,9 @@
 
 namespace Tests\Feature;
 
-use App\Models\Country;
-use App\Models\State;
-use App\Models\User;
+use App\Country\Country;
+use App\State\State;
+use App\User\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 

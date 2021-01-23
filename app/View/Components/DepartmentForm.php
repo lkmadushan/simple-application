@@ -2,63 +2,17 @@
 
 namespace App\View\Components;
 
-use App\Models\Department;
-use Illuminate\View\Component;
+use App\Department\Department;
 
-class DepartmentForm extends Component
+class DepartmentForm extends BaseComponent
 {
-    /**
-     * Department.
-     *
-     * @var Department|null
-     */
-    public $department;
-
     /**
      * Create a new component instance.
      *
      * @param Department|null $department
      */
-    public function __construct(?Department $department = null)
+    public function __construct(Department $department)
     {
-        $this->department = $department;
-    }
-
-    /**
-     * Get the view / contents that represent the component.
-     *
-     * @return \Illuminate\Contracts\View\View|string
-     */
-    public function render()
-    {
-        return view('components.department-form');
-    }
-
-    /**
-     * Form action.
-     *
-     * @return string
-     */
-    public function action()
-    {
-        if (! $this->department->exists) {
-            return route('departments.store');
-        }
-
-        return route('departments.update', $this->department->id);
-    }
-
-    /**
-     * Form method.
-     *
-     * @return string
-     */
-    public function method()
-    {
-        if (! $this->department->exists) {
-            return 'POST';
-        }
-
-        return 'PUT';
+        parent::__construct($department);
     }
 }

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Country;
+use App\Country\Country;
 use Exception;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;

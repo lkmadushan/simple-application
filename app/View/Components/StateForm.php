@@ -2,19 +2,11 @@
 
 namespace App\View\Components;
 
-use App\Models\State;
+use App\State\State;
 use Illuminate\Support\Collection;
-use Illuminate\View\Component;
 
-class StateForm extends Component
+class StateForm extends BaseComponent
 {
-    /**
-     * Country.
-     *
-     * @var State|null
-     */
-    public $state;
-
     /**
      * Countries.
      *
@@ -28,47 +20,9 @@ class StateForm extends Component
      * @param Collection $countries
      * @param State|null $state
      */
-    public function __construct(Collection $countries, ?State $state = null)
+    public function __construct(State $state, Collection $countries)
     {
-        $this->state = $state;
+        parent::__construct($state);
         $this->countries = $countries;
-    }
-
-    /**
-     * Get the view / contents that represent the component.
-     *
-     * @return \Illuminate\Contracts\View\View|string
-     */
-    public function render()
-    {
-        return view('components.state-form');
-    }
-
-    /**
-     * Form action.
-     *
-     * @return string
-     */
-    public function action()
-    {
-        if (! $this->state->exists) {
-            return route('states.store');
-        }
-
-        return route('states.update', $this->state->id);
-    }
-
-    /**
-     * Form method.
-     *
-     * @return string
-     */
-    public function method()
-    {
-        if (! $this->state->exists) {
-            return 'POST';
-        }
-
-        return 'PUT';
     }
 }

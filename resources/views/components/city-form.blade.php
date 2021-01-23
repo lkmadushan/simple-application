@@ -13,13 +13,13 @@
     @csrf
     @method($method)
     <div class="form-group">
-      <label for="country_id">Country</label>
-      <select class="form-control" id="country_id" name="country_id">
-        @foreach($countries as $country)
+      <label for="state_id">State</label>
+      <select class="form-control" id="state_id" name="state_id">
+        @foreach($states as $state)
           <option class=""
-            value="{{ $country->id }}"
-            @if(optional($resource)->country_id == $country->id) selected @endif
-          >{{ $country->name }}</option>
+                  value="{{ $state->id }}"
+                  @if(optional($resource)->state_id == $state->id) selected @endif
+          >{{ $state->name }}</option>
         @endforeach
       </select>
     </div>
