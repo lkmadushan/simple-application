@@ -14,9 +14,9 @@
     @method($method)
     <div class="form-group">
       <label for="country_id">Country</label>
-      <select class="form-control" id="country_id" name="country_id">
+      <select class="custom-select mr-sm-2" id="country_id" name="country_id">
         @foreach($countries as $country)
-          <option class=""
+          <option
             value="{{ $country->id }}"
             @if(optional($resource)->country_id == $country->id) selected @endif
           >{{ $country->name }}</option>

@@ -14,7 +14,7 @@
     @method($method)
 
     <div class="form-group">
-      <label for="country_code">country Code</label>
+      <label for="country_code">Code</label>
       <input
         id="country_code"
         type="text"
