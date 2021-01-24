@@ -245,7 +245,6 @@ export default {
   },
 
   created() {
-    console.log('called')
     this.fetchEmployees()
     this.fetchCountries()
     this.fetchDepartment()
@@ -348,7 +347,6 @@ export default {
         this.resetForm()
         this.fetchEmployees()
       } catch ({response}) {
-        console.log(response)
       }
     },
 

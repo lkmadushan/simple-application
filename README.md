@@ -24,6 +24,10 @@ Generate new passport encryption keys
 
     php artisan passport:keys
 
+Create personal access client
+
+    php artisan passport:client --personal
+
 Update following section of the `.env` file to configure database connection
 
     DB_CONNECTION=mysql
