@@ -30,6 +30,7 @@ class EmployeeForm extends BaseComponent
 
     /**
      * BaseComponent constructor.
+     *
      * @param Employee $employee
      * @param Collection $countries
      * @param Collection $states

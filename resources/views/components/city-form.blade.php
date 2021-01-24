@@ -17,8 +17,8 @@
       <select class="custom-select mr-sm-2" id="state_id" name="state_id">
         @foreach($states as $state)
           <option
-                  value="{{ $state->id }}"
-                  @if(optional($resource)->state_id == $state->id) selected @endif
+            value="{{ $state->id }}"
+            @if(optional($resource)->state_id == $state->id) selected @endif
           >{{ $state->name }}</option>
         @endforeach
       </select>

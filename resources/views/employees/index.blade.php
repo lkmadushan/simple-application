@@ -2,10 +2,10 @@
 
 @section('content')
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <employees />
-            </div>
+      <div class="row justify-content-center">
+        <div class="col-md-12">
+          <employees/>
         </div>
+      </div>
     </div>
 @endsection

@@ -1,16 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">{{ __('Cities') }}</div>
-                    <div class="card-body">
-                        <x-city-form :city="$city" :states="$states" />
-                    </div>
-                </div>
-            </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">{{ __('Cities') }}</div>
+          <div class="card-body">
+            <x-city-form :city="$city" :states="$states"/>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 @endsection

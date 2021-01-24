@@ -25,6 +25,9 @@
         @edit="$emit('edit', employee)"
         @destroy="$emit('destroy', employee)"
       />
+    <tr v-if="!employees.length">
+      <td colspan="13" class="text-center">No employees available.</td>
+    </tr>
     </tbody>
   </table>
 </template>

@@ -28,7 +28,7 @@ class City extends BaseModel
      */
     public function state()
     {
-        return $this->belongsTo(State::class);
+        return $this->belongsTo(State::class)->withDefault();
     }
 
     /**

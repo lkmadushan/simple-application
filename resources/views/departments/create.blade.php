@@ -7,7 +7,7 @@
         <div class="card">
           <div class="card-header">{{ __('Departments') }}</div>
           <div class="card-body">
-            <x-department-form />
+            <x-department-form/>
           </div>
         </div>
       </div>

@@ -2,9 +2,9 @@
 
 namespace App\Domain;
 
-use Illuminate\Support\Str;
-use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class BaseFilters
 {

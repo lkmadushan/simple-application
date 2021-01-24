@@ -15,6 +15,7 @@ abstract class BaseComponent extends Component
 
     /**
      * BaseComponent constructor.
+     *
      * @param Model $country
      */
     public function __construct(Model $country)

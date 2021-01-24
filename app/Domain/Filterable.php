@@ -2,7 +2,6 @@
 
 namespace App\Domain;
 
-use App\Domain\BaseFilters;
 use Illuminate\Database\Eloquent\Builder;
 
 trait Filterable
