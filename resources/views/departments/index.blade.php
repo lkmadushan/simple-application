@@ -7,11 +7,6 @@
         <div class="card">
           <div class="card-header">{{ __('Departments') }}</div>
           <div class="card-body">
-            @if (session('status'))
-              <div class="alert alert-success" role="alert">
-                {{ session('status') }}
-              </div>
-            @endif
             <form class="d-flex" action="{{ route('departments.index') }}" method="GET">
               <input placeholder="Search here..." type="text" value="{{ request('search') }}" class="form-control"
                      name="search">
