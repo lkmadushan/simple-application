@@ -4,6 +4,7 @@ use App\Http\Controllers\API\CitiesController;
 use App\Http\Controllers\API\CountriesController;
 use App\Http\Controllers\API\DepartmentsController;
 use App\Http\Controllers\API\EmployeesController;
+use App\Http\Controllers\API\RegisterUsersController;
 use App\Http\Controllers\API\StatesController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+Route::post('register', RegisterUsersController::class);
 
 Route::middleware('auth:api')->group(function () {
     Route::get('employees', [EmployeesController::class, 'index']);
