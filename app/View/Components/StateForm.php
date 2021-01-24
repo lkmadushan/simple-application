@@ -2,7 +2,7 @@
 
 namespace App\View\Components;
 
-use App\State\State;
+use App\Domain\State\State;
 use Illuminate\Support\Collection;
 
 class StateForm extends BaseComponent

@@ -2,8 +2,8 @@
 
 namespace Tests\Feature;
 
-use App\Country\Country;
-use App\User\User;
+use App\Domain\Country\Country;
+use App\Domain\User\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 

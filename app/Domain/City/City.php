@@ -1,20 +1,16 @@
 <?php
 
-namespace App\City;
+namespace App\Domain\City;
 
-use App\State\State;
+use App\Domain\BaseModel;
+use App\Domain\State\State;
 use Database\Factories\CityFactory;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Query\Builder;
 
-class City extends Model
+class City extends BaseModel
 {
-    use HasFactory, SoftDeletes;
-
     /**
      * The attributes that are mass assignable.
      *

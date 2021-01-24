@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Country\Country;
-use App\State\State;
+use App\Domain\Country\Country;
+use App\Domain\State\State;
 use Exception;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Department\Department;
+use App\Domain\Department\Department;
 use Exception;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;

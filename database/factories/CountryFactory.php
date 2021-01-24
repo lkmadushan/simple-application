@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Country\Country;
+use App\Domain\Country\Country;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class CountryFactory extends Factory

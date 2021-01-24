@@ -1,8 +1,8 @@
 <?php
 
-namespace App\State;
+namespace App\Domain\State;
 
-use App\Country\Country;
+use App\Domain\Country\Country;
 use Illuminate\Database\Eloquent\Builder;
 
 class StateBuilder extends Builder

@@ -2,7 +2,7 @@
 
 namespace App\View\Components;
 
-use App\City\City;
+use App\Domain\City\City;
 use Illuminate\Support\Collection;
 
 class CityForm extends BaseComponent

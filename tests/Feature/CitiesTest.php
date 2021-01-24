@@ -2,10 +2,10 @@
 
 namespace Tests\Feature;
 
-use App\City\City;
-use App\Country\Country;
-use App\State\State;
-use App\User\User;
+use App\Domain\City\City;
+use App\Domain\Country\Country;
+use App\Domain\State\State;
+use App\Domain\User\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
