@@ -7,6 +7,7 @@ use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Query\Builder;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
@@ -66,5 +67,17 @@ class User extends Authenticatable
     protected static function newFactory()
     {
         return UserFactory::new();
+    }
+
+    /**
+     * Create a new Eloquent query builder for the model.
+     *
+     * @param  Builder  $query
+     *
+     * @return UserBuilder
+     */
+    public function newEloquentBuilder($query)
+    {
+        return new UserBuilder($query);
     }
 }

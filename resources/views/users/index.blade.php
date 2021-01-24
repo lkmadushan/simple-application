@@ -7,11 +7,6 @@
                 <div class="card">
                     <div class="card-header">{{ __('Users') }}</div>
                     <div class="card-body">
-                        @if (session('user'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('user') }}
-                            </div>
-                        @endif
                         <form class="d-flex" action="{{ route('users.index') }}" method="GET">
                             <input placeholder="Search here..." type="text" value="{{ request('search') }}" class="form-control" name="search">
                             <button class="mx-2 btn btn-primary text-light">
@@ -52,6 +47,11 @@
                                     </td>
                                 </tr>
                             @endforeach
+                            @if($users->isEmpty())
+                              <tr>
+                                <td colspan="6" class="text-center">No users available.</td>
+                              </tr>
+                            @endif
                             </tbody>
                         </table>
                     </div>
